@@ -1,6 +1,13 @@
+import { Suspense } from "react";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
 import "./globals.css";
+import Loading from "@/components/auth/loading";
+import { Toaster } from "@/components/ui/sonner";
+import { ConvexCLientProvider } from "@/providers/convex-client-provider";
+import ModalProvider from "@/providers/modal-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +23,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Suspense fallback={<Loading />}>
+          <ConvexCLientProvider>
+            <Toaster />
+            <ModalProvider />
+            {children}
+          </ConvexCLientProvider>
+        </Suspense>
+      </body>
     </html>
   );
 }
