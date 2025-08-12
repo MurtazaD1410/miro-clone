@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Miro Clone
 
-## Getting Started
+A modern, collaborative whiteboard application inspired by Miro. Built with Next.js, featuring real-time collaboration, infinite canvas, and a comprehensive set of drawing and design tools for teams and individuals.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Infinite Canvas**: Unlimited space for creativity and collaboration
+- **Real-Time Collaboration**: Work together with team members in real-time
+- **Drawing Tools**: Comprehensive set of drawing, text, and shape tools
+- **Sticky Notes**: Create and organize ideas with colorful sticky notes
+- **Shapes & Objects**: Add rectangles, circles, arrows, and custom shapes
+- **Text Editing**: Rich text editing with various fonts and formatting options
+- **Layers Management**: Organize elements with layer controls and grouping
+- **Zoom & Pan**: Smooth navigation with zoom and pan functionality
+- **Undo/Redo**: Full history tracking with unlimited undo/redo
+- **Export Options**: Export boards as images or PDFs
+- **Template Library**: Pre-built templates for common use cases
+- **Comments & Annotations**: Add comments and feedback directly on the board
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: Next.js 14, React 18, TypeScript
+- **Styling**: Tailwind CSS
+- **Canvas Rendering**: HTML5 Canvas / Fabric.js
+- **Backend**: Convex (Real-time Database)
+- **Real-time Collaboration**: Liveblocks
+- **Authentication**: Clerk
+- **Deployment**: Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 📦 Installation
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js 18+ 
+- npm, yarn, pnpm, or bun
+- Convex account and project setup
+- Clerk account for authentication
+- Liveblocks account for real-time collaboration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/MurtazaD1410/miro-clone.git
+   cd miro-clone
+   ```
 
-## Deploy on Vercel
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Environment Configuration**
+   ```bash
+   cp .env.example .env.local
+   ```
+   
+   Update the `.env.local` file with your configuration:
+   ```env
+   # Convex Backend
+   CONVEX_DEPLOYMENT="your_convex_deployment_name"
+   NEXT_PUBLIC_CONVEX_URL="your_convex_url"
+   
+   # Clerk Authentication
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="your_clerk_publishable_key"
+   CLERK_SECRET_KEY="your_clerk_secret_key"
+   
+   # Liveblocks Real-time Collaboration
+   LIVEBLOCKS_SECRET_KEY="your_liveblocks_secret_key"
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4. **Convex Setup**
+   
+   Initialize and deploy your Convex backend:
+   
+   ```bash
+   # Install Convex CLI globally
+   npm install -g convex
+   
+   # Login to Convex
+   npx convex login
+   
+   # Initialize Convex in your project
+   npx convex dev
+   ```
+
+5. **Clerk Configuration**
+   
+   Set up Clerk for authentication:
+   
+   - Configure sign-in/sign-up flows
+   - Set up OAuth providers (optional)
+   - Configure webhook endpoints for user management
+
+6. **Liveblocks Setup**
+   
+   Configure Liveblocks for real-time collaboration:
+   
+   - Set up rooms and permissions
+   - Configure presence and broadcast features
+   - Set up authentication with Clerk integration
+
+7. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
+
+8. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000) to start creating and collaborating.
+
+⭐ If you found this project helpful, please give it a star on GitHub!
