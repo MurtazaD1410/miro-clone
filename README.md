@@ -21,11 +21,10 @@ A modern, collaborative whiteboard application inspired by Miro. Built with Next
 
 - **Frontend**: Next.js 14, React 18, TypeScript
 - **Styling**: Tailwind CSS
-- **Canvas Rendering**: HTML5 Canvas / Fabric.js
+- **Canvas Rendering**: HTML5 Canvas
 - **Backend**: Convex (Real-time Database)
 - **Real-time Collaboration**: Liveblocks
 - **Authentication**: Clerk
-- **Deployment**: Vercel
 
 ## 📦 Installation
 
